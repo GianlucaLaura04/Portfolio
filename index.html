@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gianluca Laura — Diseño Multimedia</title>
+<meta name="description" content="Portfolio de Gianluca Laura, estudiante de Diseño Multimedia. Motion graphics, 3D y dirección de arte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ TIMELINE NAV (elemento firma) ============ -->
+<nav class="timeline-nav" aria-label="Navegación principal">
+  <div class="timeline-nav__inner">
+    <span class="timeline-nav__brand">GL</span>
+    <div class="timeline-track" id="timelineTrack">
+      <div class="timeline-track__progress" id="timelineProgress"></div>
+      <button class="keyframe" data-target="inicio" style="left:0%"><span>Inicio</span></button>
+      <button class="keyframe" data-target="sobre-mi" style="left:20%"><span>Sobre mí</span></button>
+      <button class="keyframe" data-target="proyectos" style="left:40%"><span>Proyectos</span></button>
+      <button class="keyframe" data-target="herramientas" style="left:60%"><span>Herramientas</span></button>
+      <button class="keyframe" data-target="habilidades" style="left:80%"><span>Habilidades</span></button>
+      <button class="keyframe" data-target="contacto" style="left:100%"><span>Contacto</span></button>
+    </div>
+    <span class="timeline-nav__timecode" id="timecode">00:00:00:00</span>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="inicio" class="hero">
+<div class="hero__canvas" aria-hidden="true">
+    <div class="blob-wrap" data-depth="30"><div class="blob blob--1"></div></div>
+    <div class="blob-wrap" data-depth="50"><div class="blob blob--2"></div></div>
+    <div class="blob-wrap" data-depth="70"><div class="blob blob--3"></div></div>
+    <div class="hero__grain"></div>
+</div>
+
+  <div class="hero__object" aria-hidden="true">
+    <div class="cube">
+      <div class="cube__face cube__face--front"></div>
+      <div class="cube__face cube__face--back"></div>
+      <div class="cube__face cube__face--right"></div>
+      <div class="cube__face cube__face--left"></div>
+      <div class="cube__face cube__face--top"></div>
+      <div class="cube__face cube__face--bottom"></div>
+    </div>
+  </div>
+</div>
+  <div class="hero__content">
+    <p class="eyebrow">// diseño multimedia — 4to año</p>
+    <h1 class="hero__title">Gianluca<br>Laura</h1>
+    <p class="hero__role">Motion Graphics · Dirección de Arte · UX/UI</p>
+    <p class="hero__tagline">
+      Cuento ideas en movimiento. Combino After Effects, Photoshop y Figma para construir piezas visuales con identidad propia, con una mirada cinematográfica en cada frame.
+    </p>
+    <div class="hero__cta">
+      <a href="#proyectos" class="btn btn--primary">Ver proyectos</a>
+      <a href="#contacto" class="btn btn--ghost">Contactame</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</header>
+
+<!-- ============ SOBRE MÍ ============ -->
+<section id="sobre-mi" class="section">
+  <div class="section__head">
+    <span class="section__eyebrow">01 — Sobre mí</span>
+    <h2 class="section__title">Quién edita<br>detrás de cámara</h2>
+  </div>
+  <div class="about">
+    <p class="about__bio">
+      Soy Gianluca, estudiante de Diseño Multimedia cursando cuarto año.
+      Siempre tuve pasión por comunicar cosas a través de lo visual: transmitir
+      emociones y hacer sentir algo con una imagen o una animación. Soy fanático
+      del cine, y trato de llevar ese lenguaje cinematográfico a todo lo que
+      diseño. After Effects es mi herramienta principal — la uso tanto para
+      piezas con estética cinematográfica como para motion graphics, animación
+      2D y morphing UI. También manejo Figma para diseño UX/UI y sé armar
+      páginas web. Podés ver más de mi trabajo en Instagram.
+    </p>
+    <div class="about__stats">
+      <div class="about__stat">
+        <span class="about__stat-num">4°</span>
+        <span class="about__stat-label">Año de la carrera</span>
+      </div>
+      <div class="about__stat">
+        <span class="about__stat-num">3+</span>
+        <span class="about__stat-label">Software de dominio</span>
+      </div>
+      <div class="about__stat">
+        <span class="about__stat-num">01</span>
+        <span class="about__stat-label">Objetivo: primer proyecto freelance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section id="proyectos" class="section section--dark">
+<div class="section__head">
+  <span class="section__eyebrow">02 — Proyectos</span>
+  <h2 class="section__title">Selección de<br>trabajos</h2>
+</div>
+
+<div class="filters is-hidden" id="filtersWrap">
+  <button class="filter-btn is-active" data-filter="todos">Todos</button>
+  <button class="filter-btn" data-filter="motion">Motion Graphics / AE</button>
+  <button class="filter-btn" data-filter="arte">Diseño / Arte</button>
+  <button class="filter-btn" data-filter="web">Diseño & Desarrollo Web</button>
+</div>
+
+<div class="projects-viewport" id="projectsViewport">
+  <div class="projects" id="projectsGrid">
+
+    <!-- PROYECTO 01 -->
+    <article class="project-card" data-category="motion">
+      <a href="https://www.instagram.com/reel/DaoXO5dO2eP/?igsh=MXFha245N2lveXR0Nw==" class="project-card__media" style="background-image:url('fotos/projecto1.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">MOTION GRAPHICS / UI DESIGN</span>
+        <h3 class="project-card__title">Interactive Music Player UI</h3>
+        <p class="project-card__desc">Exploración visual y motion de un reproductor dinámico para la estética visual del álbum. Enfoque en atmósfera, iluminación roja y dinamismo en capas.</p>
+      </div>
+    </article>
+
+    <!-- PROYECTO 02 -->
+    <article class="project-card" data-category="motion">
+      <a href="https://www.instagram.com/reel/DaJXotRvNjV/?igsh=MW9sbThyYzhpN2pidw==" class="project-card__media" style="background-image:url('fotos/projecto2.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">MOTION GRAPHICS / COLLAGE DIGITAL</span>
+        <h3 class="project-card__title">Rojuu Visual Concept</h3>
+        <p class="project-card__desc">Estudio de animación y transformación de elementos en pixel art, con una dirección visual referenciada en la estética webcore y la iconografía de Rojuu.</p>
+      </div>
+    </article>
+
+    <!-- PROYECTO 03 -->
+    <article class="project-card" data-category="arte">
+     <a href="https://www.instagram.com/reel/DZLI8xItMK7/?igsh=cHg4MW1rOXN2dnIx" class="project-card__media" style="background-image:url('fotos/proyecto3.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">POSTER DESIGN / ARTE DIGITAL</span>
+        <h3 class="project-card__title">Saramalacara / Grunge Goth</h3>
+        <p class="project-card__desc">Ejercicio de dirección de arte inspirado en la gráfica under de bandas de punk y metal: tipografía blackletter, textura serigráfica y una paleta reducida para lograr una pieza con identidad de flyer de gira.</p>
+      </div>
+    </article>
+
+    <!-- PROYECTO 04 -->
+    <article class="project-card" data-category="motion">
+      <a href="https://www.instagram.com/reel/DbWIMZVJjMl/?igsh=MXhsaXFtbjFpaHNraA==" class="project-card__media" style="background-image:url('fotos/proyecto4.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">MOTION GRAPHICS / COLLAGE DIGITAL</span>
+        <h3 class="project-card__title">Visualizer Y2K — "Tan Mala" (Salasflaco)</h3>
+        <p class="project-card__desc">Pieza audiovisual de estética Internet Core y Webcore con animación collage, composición saturada y VFX retro para lanzamiento musical.</p>
+      </div>
+    </article>
+
+    <!-- PROYECTO 05 -->
+    <article class="project-card" data-category="motion">
+      <a href="https://www.instagram.com/reel/Dbovo7LOq0L/?igsh=dmx4ZzhnazA3cHdh" class="project-card__media" style="background-image:url('fotos/proyecto5.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">MOTION GRAPHICS / LYRICS VISUALIZATION</span>
+        <h3 class="project-card__title">Zell-Diamante Visualizer</h3>
+        <p class="project-card__desc">Pieza audiovisual cinética y dinámica creada para proyectar la estética urbana del artista. Combina tipografía animada en sincronía con el ritmo (lyric video), transiciones fluidas de cámara 3D y elementos gráficos en capas.</p>
+      </div>
+    </article>
+
+    <!-- PROYECTO 06 -->
+    <article class="project-card" data-category="arte">
+      <a href="https://www.instagram.com/reel/DZGtDKOtaiP/?igsh=MXUzbmZqbXN5MmJ0Mg==" class="project-card__media" style="background-image:url('fotos/proyecto6.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">POSTER DESIGN / ARTE DIGITAL</span>
+        <h3 class="project-card__title">Bhavi / Dale nino</h3>
+        <p class="project-card__desc">Diseño de afiche promocional con estética post-punk / grunge-pop e influencias del fanzine impreso. Trabajo enfocado en el tratamiento de color de alto contraste (duotono amarillo/rosa neón) y texturas de imprenta analógica.</p>
+      </div>
+    </article>
+
+
+    <!-- PROYECTO 07 -->
+    <article class="project-card" data-category="web">
+      <a href="https://gianlucalaura04.github.io/levelcuplanding/" class="project-card__media" style="background-image:url('fotos/proyecto7.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">UX/UI / DISEÑO WEB</span>
+        <h3 class="project-card__title">Level Up — Landing Page Design</h3>
+        <p class="project-card__desc">Diseño UI/UX responsive (Desktop y Mobile) para una landing page de eventos de esports. Arquitectura de información, componentes dinámicos y flujo de reserva de entradas.</p>
+      </div>
+    </article>
+
+        <!-- PROYECTO 08 -->
+    <article class="project-card" data-category="web">
+      <a href="https://gianlucalaura04.github.io/Codigotaller2/index.html" class="project-card__media" style="background-image:url('fotos/proyecto8.png'); background-size:cover; background-position:center;">
+        <span class="project-card__play" aria-hidden="true">▶</span>
+      </a>
+      <div class="project-card__info">
+        <span class="project-card__category">UX/UI / DISEÑO WEB</span>
+        <h3 class="project-card__title">Rolling Stone — UI/UX Website Redesign Concept </h3>
+        <p class="project-card__desc">Rediseño UI/UX para el sitio web de Rolling Stone en Español. Maquetación editorial moderna, arquitectura de información optimizada para notas y módulos comunitarios de interacción con álbumes.</p>
+      </div>
+    </article>
+
+
+
+
+  </div>
+</div>
+
+<div class="load-more-wrap">
+  <button class="load-more-btn" id="loadMoreBtn">Ver todos los proyectos</button>
+</div>
+</section>
+
+<!-- ============ HERRAMIENTAS ============ -->
+<section id="herramientas" class="section">
+  <div class="section__head">
+    <span class="section__eyebrow">03 — Herramientas</span>
+    <h2 class="section__title">Mi timeline<br>de software</h2>
+  </div>
+  <div class="tracks">
+    <div class="track">
+      <div class="track__label">
+        <span class="track__name">After Effects</span>
+        <span class="track__level">Avanzado</span>
+      </div>
+      <div class="track__bar"><div class="track__fill track__fill--pink" style="width:90%"></div></div>
+    </div>
+    <div class="track">
+      <div class="track__label">
+        <span class="track__name">Figma / UX-UI</span>
+        <span class="track__level">Avanzado</span>
+      </div>
+      <div class="track__bar"><div class="track__fill track__fill--violet" style="width:80%"></div></div>
+    </div>
+    <div class="track">
+      <div class="track__label">
+        <span class="track__name">Photoshop</span>
+        <span class="track__level">Avanzado</span>
+      </div>
+      <div class="track__bar"><div class="track__fill track__fill--amber" style="width:85%"></div></div>
+    </div>
+    <div class="track">
+      <div class="track__label">
+        <span class="track__name">Blender</span>
+        <span class="track__level">Básico</span>
+      </div>
+      <div class="track__bar"><div class="track__fill track__fill--dim" style="width:30%"></div></div>
+    </div>
+  </div>
+  <p class="tracks__note"></p>
+</section>
+
+<!-- ============ HABILIDADES ============ -->
+<section id="habilidades" class="section">
+  <div class="section__head">
+    <span class="section__eyebrow">04 — Habilidades</span>
+    <h2 class="section__title">Lo que puedo<br>aportar</h2>
+  </div>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <span class="skill-card__tag">MOTION</span>
+      <h3 class="skill-card__title">After Effects</h3>
+      <p class="skill-card__desc">Motion graphics, animación 2D y morphing UI — mi herramienta principal para darle vida a cualquier idea.</p>
+    </div>
+
+    <div class="skill-card">
+     <span class="skill-card__tag">UX / UI</span>
+      <h3 class="skill-card__title">Diseño UX/UI</h3>
+     <p class="skill-card__desc">Diseño de interfaces en Figma, pensando la experiencia de usuario tanto como la parte visual — de wireframes a prototipos interactivos.</p>
+    </div>
+
+    <div class="skill-card">
+      <span class="skill-card__tag">AUDIOVISUAL</span>
+      <h3 class="skill-card__title">Edición de Video / Reels</h3>
+      <p class="skill-card__desc">Armado y edición de contenido para redes, con ritmo, cortes y grafismos pensados para el formato vertical.</p>
+    </div>
+
+    <div class="skill-card">
+      <span class="skill-card__tag">DESARROLLO WEB</span>
+      <h3 class="skill-card__title">Diseño y Creación de Páginas Web</h3>
+      <p class="skill-card__desc">Construcción de sitios desde cero con HTML, CSS y JavaScript, pensando la estructura y la experiencia de cada página.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" class="section section--dark section--contact">
+  <div class="section__head">
+    <span class="section__eyebrow">04 — Contacto</span>
+    <h2 class="section__title">Hablemos de<br>tu próximo proyecto</h2>
+    <p class="section__note">
+      Estoy disponible para proyectos freelance y oportunidades de práctica.
+    </p>
+  </div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:lauragianluca14@gmail.com">
+      <span class="contact-card__label">Email</span>
+      <span class="contact-card__value">lauragianluca14@gmail.com</span>
+    </a>
+    <a class="contact-card" href="https://instagram.com/shianlu.mp4" target="_blank" rel="noopener">
+      <span class="contact-card__label">Instagram</span>
+      <span class="contact-card__value">@shianlu.mp4</span>
+    </a>
+    <a class="contact-card" href="https://wa.me/5492216231429" target="_blank" rel="noopener">
+      <span class="contact-card__label">WhatsApp</span>
+      <span class="contact-card__value">+54 9 221 623-1429</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Gianluca Laura — Diseño Multimedia</p>
+  <p class="footer__small">Sitio hecho con HTML, CSS &amp; JS · Alojado en GitHub Pages</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
