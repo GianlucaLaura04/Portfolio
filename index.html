@@ -118,22 +118,21 @@
 <div class="projects-viewport" id="projectsViewport">
   <div class="projects" id="projectsGrid">
 
-    <!-- PROYECTO 01 -->
-    <article class="project-card" data-category="motion">
-      <a href="https://www.instagram.com/reel/DaoXO5dO2eP/?igsh=MXFha245N2lveXR0Nw==" class="project-card__media" style="background-image:url('fotos/projecto1.png'); background-size:cover; background-position:center;">
-        <span class="project-card__play" aria-hidden="true">▶</span>
-      </a>
-      <div class="project-card__info">
-        <span class="project-card__category">MOTION GRAPHICS / UI DESIGN</span>
-        <h3 class="project-card__title">Interactive Music Player UI</h3>
-        <p class="project-card__desc">Exploración visual y motion de un reproductor dinámico para la estética visual del álbum. Enfoque en atmósfera, iluminación roja y dinamismo en capas.</p>
-      </div>
-    </article>
+<!-- PROYECTO 01 -->
+<article class="project-card" data-category="motion">
+  <a href="#" class="project-card__media" data-video="6h-cIDCV0Ug" style="background-image:url('fotos/projecto1.png'); background-size:cover; background-position:center;">
+    <span class="project-card__play" aria-hidden="true">▶</span>
+  </a>
+  <div class="project-card__info">
+    <span class="project-card__category">MOTION GRAPHICS / UI DESIGN</span>
+    <h3 class="project-card__title">Interactive Music Player UI</h3>
+    <p class="project-card__desc">Exploración visual y motion de un reproductor dinámico para la estética visual del álbum. Enfoque en atmósfera, iluminación roja y dinamismo en capas.</p>
+  </div>
+</article>
 
     <!-- PROYECTO 02 -->
     <article class="project-card" data-category="motion">
-      <a href="https://www.instagram.com/reel/DaJXotRvNjV/?igsh=MW9sbThyYzhpN2pidw==" class="project-card__media" style="background-image:url('fotos/projecto2.png'); background-size:cover; background-position:center;">
-        <span class="project-card__play" aria-hidden="true">▶</span>
+  <a href="#" class="project-card__media" data-video="PimNBjIM0p8" style="background-image:url('fotos/projecto2.png'); background-size:cover; background-position:center;">        <span class="project-card__play" aria-hidden="true">▶</span>
       </a>
       <div class="project-card__info">
         <span class="project-card__category">MOTION GRAPHICS / COLLAGE DIGITAL</span>
@@ -156,7 +155,7 @@
 
     <!-- PROYECTO 04 -->
     <article class="project-card" data-category="motion">
-      <a href="https://www.instagram.com/reel/DbWIMZVJjMl/?igsh=MXhsaXFtbjFpaHNraA==" class="project-card__media" style="background-image:url('fotos/proyecto4.png'); background-size:cover; background-position:center;">
+  <a href="#" class="project-card__media" data-video="CmcWA1Lbx7M" style="background-image:url('fotos/proyecto4.png'); background-size:cover; background-position:center;">        <span class="project-card__play" aria-hidden="true">▶</span>
         <span class="project-card__play" aria-hidden="true">▶</span>
       </a>
       <div class="project-card__info">
@@ -168,7 +167,7 @@
 
     <!-- PROYECTO 05 -->
     <article class="project-card" data-category="motion">
-      <a href="https://www.instagram.com/reel/Dbovo7LOq0L/?igsh=dmx4ZzhnazA3cHdh" class="project-card__media" style="background-image:url('fotos/proyecto5.png'); background-size:cover; background-position:center;">
+            <a href="#" class="project-card__media" data-video="oKf4yf-kQtk" style="background-image:url('fotos/proyecto5.png'); background-size:cover; background-position:center;">
         <span class="project-card__play" aria-hidden="true">▶</span>
       </a>
       <div class="project-card__info">
@@ -340,6 +339,19 @@
   <p>© 2026 Gianluca Laura — Diseño Multimedia</p>
 </footer>
 
+<!-- MODAL DE VIDEO -->
+<div id="video-modal" class="video-modal" hidden>
+  <div class="video-modal__backdrop" data-close></div>
+  <div class="video-modal__content">
+    <button class="video-modal__close" data-close aria-label="Cerrar">✕</button>
+    <div class="video-modal__frame">
+      <iframe id="video-modal__iframe" src="" title="Proyecto" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

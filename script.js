@@ -142,3 +142,23 @@ filterBtns.forEach(btn => {
     });
   });
 });
+
+
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('video-modal__iframe');
+
+  document.querySelectorAll('[data-video]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const videoId = link.getAttribute('data-video');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      modal.hidden = false;
+    });
+  });
+
+  modal.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', () => {
+      modal.hidden = true;
+      iframe.src = ''; // corta la reproducción al cerrar
+    });
+  });
