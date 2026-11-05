@@ -91,16 +91,18 @@ button { font: inherit; }
 .login__top, .login__bot { flex: none; height: 84px; background: #00309C; }
 .login__top { border-bottom: 2px solid #8FB3F5; }
 .login__bot { border-top: 2px solid #F29F2E; }
-.login__mid { flex: 1; display: flex; align-items: center; justify-content: center; gap: 56px; padding: 24px; background: radial-gradient(circle at 20% 30%, #7F9DE8, #5A7EDC 60%); }
-.login__left { max-width: 280px; text-align: right; color: #fff; }
+.login__mid { position: relative; flex: 1; display: flex; align-items: center; padding: 24px; background: radial-gradient(circle at 20% 30%, #7F9DE8, #5A7EDC 60%); }
+.login__left { flex: 1 1 0; padding-right: 48px; text-align: right; color: #fff; }
+.login__right { flex: 1 1 0; display: flex; padding-left: 48px; }
+.login__mid::before { content: ''; position: absolute; left: 50%; top: 14%; bottom: 14%; width: 1px; background: linear-gradient(transparent, rgba(255,255,255,.6), transparent); }
 .login__left b { display: block; margin-bottom: 8px; font: italic 700 34px 'Trebuchet MS', sans-serif; }
-.login__left p { margin: 0; font-size: 15px; }
+.login__left p { max-width: 280px; margin: 0 0 0 auto; font-size: 15px; }
 .login__user { display: flex; align-items: center; gap: 14px; padding: 12px 16px; border: 2px solid transparent; border-radius: 8px; background: none; color: #fff; text-align: left; cursor: pointer; }
 .login__user:hover, .login__user:focus-visible { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.5); }
 .login__user svg { width: 64px; height: 64px; border: 2px solid #fff; border-radius: 8px; }
 .login__user b { display: block; font-size: 20px; }
 .boot__skip { position: absolute; right: 16px; bottom: 12px; z-index: 2; border: 0; background: none; color: #cfd8f5; text-decoration: underline; cursor: pointer; }
-@media (max-width: 720px) { .login__mid { flex-direction: column; gap: 20px; } .login__left { text-align: center; } }
+@media (max-width: 720px) { .login__mid { flex-direction: column; justify-content: center; gap: 20px; } .login__mid::before { display: none; } .login__left { flex: none; padding: 0; text-align: center; } .login__left p { margin: 0 auto; } .login__right { flex: none; padding: 0; } }
 
 /* Sin física (celular, tablet, movimiento reducido): íconos en grilla y ventanas a pantalla casi completa */
 .desk.static { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 8px; padding: 14px; overflow: auto; user-select: auto; }

@@ -238,14 +238,7 @@ if (window.Matter && fine && !reduce && window.innerWidth >= 900) {
   mc.collisionFilter.mask = 1;
   Composite.add(engine.world, mc);
 
-  const ptr = { x: 0, y: 0, on: false };
-  let px = 0, py = 0;
-  desk.addEventListener('mousemove', (e) => {
-    // solo empuja si el cursor está sobre el escritorio libre, no sobre una ventana
-    ptr.on = !e.target.closest('.win');
-    ptr.x = e.clientX; ptr.y = e.clientY;
-  });
-  desk.addEventListener('mouseleave', () => { ptr.on = false; mouse.button = -1; });
+  desk.addEventListener('mouseleave', () => { mouse.button = -1; });
   window.addEventListener('mouseup', () => { mouse.button = -1; });
   // Matter mide el mouse contra el escritorio; si el cursor está sobre una ventana, no agarra nada
   desk.addEventListener('mousedown', (e) => { if (e.target.closest('.win')) mouse.button = -1; }, true);
@@ -255,22 +248,10 @@ if (window.Matter && fine && !reduce && window.innerWidth >= 900) {
     requestAnimationFrame(tick);
     const dt = Math.min(now - last || 16, 32);
     last = now;
-    const vx = ptr.x - px, vy = ptr.y - py;
-    px = ptr.x; py = ptr.y;
-    const reach = 130;
-
     items.forEach((it, i) => {
       const b = it.body;
       const dr = 0.000012 * b.mass;
       Body.applyForce(b, b.position, { x: Math.sin(now * 0.0004 + i * 1.7) * dr, y: Math.cos(now * 0.00035 + i * 2.3) * dr });
-      if (ptr.on && mc.body !== b) {
-        const dx = b.position.x - ptr.x, dy = b.position.y - ptr.y;
-        const d = Math.hypot(dx, dy) || 1;
-        if (d < reach) {
-          const s = Math.pow(1 - d / reach, 2);
-          Body.applyForce(b, b.position, { x: ((dx / d) * 0.0009 + vx * 0.00004) * b.mass * s, y: ((dy / d) * 0.0009 + vy * 0.00004) * b.mass * s });
-        }
-      }
     });
 
     Engine.update(engine, dt);
