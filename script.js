@@ -66,7 +66,7 @@ function initPlayer(body) {
     Array.from(list.children).forEach(li => li.classList.toggle('on', li.dataset.t === v.title));
   }
   if (!PLAYER_VIDEOS.length) {
-    screen.innerHTML = '<p class="empty">Todavía no hay videos. Agregalos en PLAYER_VIDEOS (script.js).</p>';
+    screen.innerHTML = '<p class="empty">Todavía no hay videos.</p>';
     return;
   }
   PLAYER_VIDEOS.forEach(v => {
